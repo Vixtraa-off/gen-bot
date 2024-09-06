@@ -27,13 +27,13 @@ const { json } = require('express');
   console.log((chalk.red(`                                                               Crée par i7#1717 !`)));  
   console.log((chalk.red(`                                                                © 2023 I7#1717, Inc.`))); 
   console.log("");                                   
-  console.log((chalk.cyan(`                                                         Discord: https://discord.gg/i7shop`)));   
+  console.log((chalk.cyan(`                                                         Discord: https://discord.gg/jSvYxahuYH`)));   
   
   console.log("");                                  
 
   console.log(`Statistiques globales : \n\nLe bot a un total de ${bot.guilds.size} serveurs. \nPour un total de ${bot.users.size} membres.`)
   console.log("Connecté en tant que " + bot.user.id + " | Prefix : " + prefix+ " | Nombre de Serveurs "+ bot.guilds.size +" | Nombres de salons "+ bot.channels.size +" | Utilisateur totaux "+ bot.users.size +" | Nombre d'emojis totaux "+ bot.emojis.size +'');
-  bot.user.setActivity(".gg/novaworld - Nova-Gen-v2 ");
+  bot.user.setActivity(".gg/newbuild ");
 });
 
 bot.on("message", async message => {	
@@ -49,9 +49,9 @@ bot.on("message", async message => {
         if (generated.has(message.author.id)) {	
                  const embed = new Discord.RichEmbed()
                 .setTitle("Merci de patientez")
-                .setURL("https://github.com/Nekros-dsc")
+                .setURL("https://discord.gg/jSvYxahuYH")
                 .setDescription(":no_entry: Attendez avant de générer un autre compte "+message.author+"")
-                .setFooter(`discord.gg/novaworld`)
+                .setFooter(`discord.gg/newbuild`)
                 .setTimestamp()
                 .setColor("RANDOM");
                 message.channel.send(embed);
@@ -61,9 +61,9 @@ bot.on("message", async message => {
             let args = messageArray.slice(1);	
                  const errorgen = new Discord.RichEmbed()
                 .setTitle("Service introuvable")
-                .setURL("https://github.com/Nekros-dsc")
+                .setURL("https://github.com/Vixtraa-off")
                 .setDescription(":no_entry: Veuillez préciser le service que vous souhaitez!")
-                .setFooter(`discord.gg/novaworld`)
+                .setFooter(`discord.gg/newbuild`)
                 .setTimestamp()
                 .setColor("RANDOM");
                 if (!args[0]) return message.channel.send(errorgen);
@@ -75,9 +75,9 @@ bot.on("message", async message => {
             } catch{	
                 const error = new Discord.RichEmbed()
                 .setTitle("Service introuvable")
-                .setURL("https://github.com/Nekros-dsc")
+                .setURL("https://github.com/Vixtraa-off")
                 .setDescription(":no_entry: Le service `"+args[0]+"` n'existe pas")
-                .setFooter(`discord.gg/novaworld`)
+                .setFooter(`discord.gg/newbuild`)
                 .setTimestamp()
                 .setColor("RANDOM");
                 return message.channel.send(error);
@@ -86,9 +86,9 @@ bot.on("message", async message => {
             let account = JSON.parse(data)
                 const compte = new Discord.RichEmbed()
                 .setTitle("Aucun compte disponible")
-                .setURL("https://github.com/Nekros-dsc")
+                .setURL("https://github.com/Vixtraa-off")
                 .setDescription(":no_entry: Il n'y a aucun compte disponible pour `"+args[0]+"`")
-                .setFooter(`discord.gg/novaworld`)
+                .setFooter(`discord.gg/newbuild`)
                 .setTimestamp()
                 .setColor("RANDOM");
                 if (account.length <= 0) return message.channel.send(compte);
@@ -99,7 +99,7 @@ bot.on("message", async message => {
                     description: ":ballot_box_with_check: J'ai envoyer votre compte en message privé!",	
                     color: 3092790,   
                     footer: {	
-                        text: `© Nova World ${Nombot}`	
+                        text: `© NewBuild ${Nombot}`	
                     },	
                 };	
 
@@ -112,7 +112,7 @@ bot.on("message", async message => {
                     "url": ""
                     },
                     "footer": {   
-                        "text": `© Nova World ${Nombot}`    
+                        "text": `© NewBuild ${Nombot}`    
                     },  
                     "fields": [	
                       {	
@@ -145,9 +145,9 @@ bot.on("message", async message => {
         let data;	
                 const errorcheck = new Discord.RichEmbed()
                 .setTitle("Merci de choisir un service")
-                .setURL("https://github.com/Nekros-dsc")
+                .setURL("https://github.com/Vixtraa-off")
                 .setDescription(":no_entry: Veuillez préciser le service que vous souhaitez!")
-                .setFooter(`discord.gg/novaworld`)
+                .setFooter(`discord.gg/newbuild`)
                 .setTimestamp()
                 .setColor("RANDOM");
                 if (!args[0]) return message.channel.send(errorcheck);
@@ -156,9 +156,9 @@ bot.on("message", async message => {
             data = JSON.parse(fs.readFileSync(__dirname + "/comptes/" + args[0] + ".json"))	
                 const embed = new Discord.RichEmbed()
                 .setTitle("Voici le stock de "+args[0]+"")
-                .setURL("https://github.com/Nekros-dsc")
+                .setURL("https://github.com/Vixtraa-off")
                 .setDescription("Il y a `"+data.length+" comptes` dans `"+args[0]+"`")
-                .setFooter(`discord.gg/novaworld`)
+                .setFooter(`discord.gg/newbuild`)
                 .setTimestamp()
                 .setColor("RANDOM");
                 message.channel.send(embed);
@@ -166,9 +166,9 @@ bot.on("message", async message => {
         } catch {	
                 const error = new Discord.RichEmbed()
                 .setTitle("Service introuvable")
-                .setURL("https://github.com/Nekros-dsc")
+                .setURL("https://github.com/Vixtraa-off")
                 .setDescription(":no_entry: Le service `"+args[0]+"` n'existe pas")
-                .setFooter(`discord.gg/novaworld`)
+                .setFooter(`discord.gg/newbuild`)
                 .setTimestamp()
                 .setColor("RANDOM");
                 return message.channel.send(error);
@@ -184,9 +184,9 @@ bot.on("message", async message => {
             fs.writeFileSync(__dirname+"/parametregalackgen.json", JSON.stringify(parametregalackgen));	
                 const change = new Discord.RichEmbed()
                 .setTitle(""+args[0]+" changer avec succès")
-                .setURL("https://github.com/Nekros-dsc")
+                .setURL("https://github.com/Vixtraa-off")
                 .setDescription(":ballot_box_with_check: `"+args[0]+"` changé en `"+args[1]+"`")
-                .setFooter(`discord.gg/novaworld`)
+                .setFooter(`discord.gg/newbuild`)
                 .setTimestamp()
                 .setColor("RANDOM");
                 message.channel.send(change);
@@ -215,9 +215,9 @@ bot.on("message", async message => {
                 let acc = await fs.readFileSync(__dirname + "/comptes/" + data)	
                 const embed = new Discord.RichEmbed()
                 .setTitle(`Voici le stock actuel`)
-                .setURL("https://github.com/Nekros-dsc")
+                .setURL("https://github.com/Vixtraa-off")
                 .setDescription("`"+data.replace(".json","")+"` a `"+JSON.parse(acc).length+" comptes`\n")
-                .setFooter(`discord.gg/novaworld`)
+                .setFooter(`discord.gg/newbuild`)
                 .setTimestamp()
                 .setColor("RANDOM");
                 message.channel.send(embed);
@@ -244,9 +244,9 @@ bot.on("message", async message => {
                 fs.writeFileSync(__dirname + "/comptes/" + args[0].toLowerCase()+".json", JSON.stringify(newnewData))	
                       const embed = new Discord.RichEmbed()
                      .setTitle(`Le service ${args[0]} viens d'être crée avec succès`)
-                     .setURL("https://github.com/Nekros-dsc")
+                     .setURL("https://github.com/Vixtraa-off")
                      .setDescription(`:ballot_box_with_check: Service ${args[0]} créé et compte ajouté`)
-                     .setFooter(`discord.gg/novaworld`)
+                     .setFooter(`discord.gg/newbuild`)
                      .setTimestamp()
                      .setColor("RANDOM");
                    message.channel.send(embed);
@@ -265,9 +265,9 @@ bot.on("message", async message => {
                 fs.writeFileSync(__dirname + "/comptes/" + args[0].toLowerCase()+".json", JSON.stringify(data))	
                       const embed = new Discord.RichEmbed()
                      .setTitle(`Compte ajouté avec succès`)
-                     .setURL("https://github.com/Nekros-dsc")
+                     .setURL("https://github.com/Vixtraa-off")
                      .setDescription(`:ballot_box_with_check: Compte ajouté avec succès`)
-                     .setFooter(`discord.gg/novaworld`)
+                     .setFooter(`discord.gg/newbuild`)
                      .setTimestamp()
                      .setColor("RANDOM");
                    message.channel.send(embed);
@@ -296,7 +296,7 @@ if(command === "botinfo") {
       .addField('Serveurs', `\`${message.client.guilds.size}\``, true)
       .addField('Disponibilité', `\`${days}\` et \`${hours}\``, true)
       .addField('Version actuelle', `\`2.0.1\``, true)
-      .addField('Développeur de la source', `\`!"Nekros#9999\``, true) //NE PAS TOUCHER CETTE LIGNE
+      .addField('Développeur de la source', `\`!" Lucas"\``, true) //NE PAS TOUCHER CETTE LIGNE
       .setFooter(`discord.gg/novaworld`)
       .setTimestamp()
       .setColor("RANDOM");
@@ -306,21 +306,21 @@ if(command === "help") {
     if (!message.member.hasPermission("ADMINISTRATOR")) {	
       const embed = new Discord.RichEmbed()
       .setTitle(`Commandes de ${Nombot}`)
-      .setURL("https://github.com/Nekros-dsc")
+      .setURL("https://github.com/Vixtraa-off")
       .setThumbnail(message.guild.iconURL)
       .setDescription(`Voici les commandes de ${Nombot}`)
       .addField(`${prefix}gen [nom de service]`, '`générer un compte de ce service`')
       .addField(`${prefix}check [nom de service]`, '`vérifier le nombre de comptes sur ce serveur`')
       .addField(`${prefix}stock`, '`vérifier les services et les comptes`')
       .addField(`${prefix}botinfo`, '`Avoir les Informations sur le bot`')
-      .setFooter(`discord.gg/novaworld`)
+      .setFooter(`discord.gg/newbuild`)
       .setTimestamp()
       .setColor("RANDOM");
     message.channel.send(embed);
 } else {	
       const embed = new Discord.RichEmbed()
       .setTitle(`Commandes du bot Gen v2`)
-      .setURL("https://github.com/Nekros-dsc")
+      .setURL("https://github.com/Vixtraa-off")
       .setThumbnail(message.guild.iconURL)
       .setDescription(`Voici les commandes de SevenGen v2`)
       .addField(`${prefix}gen [nom de service]`, '`générer un compte de ce service`')
@@ -329,7 +329,7 @@ if(command === "help") {
       .addField(`${prefix}add [nom de service] [email:mdp]`, '`ajoutez ce compte au service, n\'oubliez pas d\'utiliser la syntaxe email:mdp`')
       .addField(`${prefix}change [cooldown, prefix] [choix]`, '`changer le préfix ou le temps de recharge (option) en une valeur, pour le temps de recharge rappelez-vous que la valeur doit être en ms`')
       .addField(`${prefix}botinfo`, '`Avoir les Informations sur le bot`')
-      .setFooter(`discord.gg/novaworld`)
+      .setFooter(`discord.gg/newbuild`)
       .setTimestamp()
       .setColor("RANDOM");
     message.channel.send(embed);
